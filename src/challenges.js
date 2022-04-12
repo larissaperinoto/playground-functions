@@ -51,9 +51,26 @@ function highestCount(arrayNumeros) {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let gato1 = mouse - cat1;
+  let gato2 = mouse - cat2;
+  if(gato1 < 0){
+    gato1 = gato1 * (-1);
+  }
+  if (gato2 < 0){
+    gato2 = gato2 * (-1);
+  }
+  let resultado = "";
+  if(gato1 < gato2){
+    resultado = "cat1";
+  } else if (gato1 === gato2) {
+    resultado = "os gatos trombam e o rato foge";
+  } else{
+    resultado = "cat2";
+  }
+  return resultado;
 }
+console.log(catAndMouse(0, 6, 12));
 
 // Desafio 8
 function fizzBuzz() {
