@@ -17,15 +17,35 @@ function triangleCheck(lineA, lineB, lineC) {
     resultado = true;
   } else if (lineC < possibilidadeLadoAB && lineC > moduloPossibilidadeLadoAB) {
     resultado = true;
-  } else{
+  } else {
     resultado = false;
   }
   return resultado;
 }
-console.log(triangleCheck(10,14,8));
+
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function contaCoposCerveja(string) {
+  let arrayString = string.split('');
+  let somaCoposCerveja = 0;
+  for (let index = 0; index < arrayString.length; index += 1) {
+    for (let numero = 1; numero <= 9; numero += 1) {
+      if (parseInt(arrayString[index]) == numero)
+      somaCoposCerveja += parseInt(arrayString[index]);
+    }
+  }
+  return somaCoposCerveja;
+}
+
+function hydrate(string) {
+  let coposCerveja = contaCoposCerveja(string);
+  let stringCoposAgua = '';
+  if (coposCerveja === 1) {
+    stringCoposAgua = coposCerveja + " " + 'copo de água';
+  } else {
+    stringCoposAgua = coposCerveja + " " + 'copos de água';
+  }
+  
+  return stringCoposAgua;
 }
 
 module.exports = {
